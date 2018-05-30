@@ -1,0 +1,18 @@
+task default: 'test'
+
+desc 'Test multi logger'
+task :test do
+  puts 'Runnin rubocop...'
+  sh 'rubocop'
+  puts
+  puts 'Running test...'
+  ruby 'multi_logger_sample.rb'
+  puts
+  puts 'Printing debug.log content...'
+  sh 'cat debug.log'
+end
+
+desc 'Remove log file created during test'
+task :clean do
+  sh 'rm debug.log'
+end
