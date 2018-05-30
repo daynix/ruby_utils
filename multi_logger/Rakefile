@@ -2,7 +2,7 @@ task default: 'test'
 
 desc 'Test multi logger'
 task :test do
-  puts 'Runnin rubocop...'
+  puts 'Running rubocop...'
   sh 'rubocop'
   puts
   puts 'Running test...'
